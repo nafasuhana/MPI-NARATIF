@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MPI Narrative Text | SMK Negeri 5 Kolaka Utara</title>
+<style>
+:root{--navy:#15395b;--blue:#23658a;--teal:#2d8b83;--gold:#f0bd58;--ink:#203247;--muted:#64748b;--paper:#f4f7fb;--line:#dbe4ee;--white:#fff;--green:#24734b;--red:#a83c3c}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;background:var(--paper);color:var(--ink);line-height:1.55}
+button,textarea,input{font:inherit}button{cursor:pointer}
+header{background:linear-gradient(120deg,#123451,#23658a 65%,#2d8b83);color:white;padding:18px 22px}
+.header-inner{max-width:1100px;margin:auto;display:flex;align-items:center;gap:14px}
+.logo{width:54px;height:54px;border:2px solid #ffffff88;border-radius:15px;display:grid;place-items:center;font-weight:bold;font-size:19px;background:#ffffff18}
+header h1{font-size:clamp(18px,3vw,26px);margin:0}header p{margin:3px 0 0;color:#dcebf4;font-size:13px}
+main{max-width:1100px;margin:22px auto;padding:0 16px 40px}
+.hero{background:linear-gradient(120deg,#15395b,#246d86);border-radius:22px;padding:34px;color:white;position:relative;overflow:hidden;min-height:255px;display:flex;align-items:center}
+.hero:after{content:"";position:absolute;width:270px;height:270px;border-radius:50%;background:#ffffff12;right:-55px;top:-75px;box-shadow:0 0 0 35px #ffffff0a,0 0 0 75px #ffffff08}
+.hero-content{position:relative;z-index:1;max-width:680px}.eyebrow{font-size:12px;letter-spacing:2px;font-weight:bold;color:#f7d68c}.hero h2{font-size:clamp(28px,5vw,43px);line-height:1.1;margin:12px 0}.hero p{max-width:600px;color:#e2edf4}.hero .start{margin-top:12px}
+.btn{border:0;border-radius:11px;padding:11px 16px;background:var(--blue);color:white;font-weight:700;transition:.15s}.btn:hover{filter:brightness(1.08);transform:translateY(-1px)}.btn.gold{background:var(--gold);color:#27384a}.btn.ghost{background:#eaf1f7;color:var(--navy)}.btn.outline{background:transparent;border:1px solid var(--line);color:var(--ink)}.btn:disabled{opacity:.45;cursor:not-allowed;transform:none}
+nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.navbtn{border:1px solid var(--line);background:white;color:var(--navy);border-radius:10px;padding:10px 13px;font-weight:700}.navbtn.active{background:var(--navy);color:white;border-color:var(--navy)}
+.panel{background:white;border:1px solid var(--line);border-radius:17px;padding:22px;box-shadow:0 5px 18px #1839570a;margin:14px 0}.screen{display:none}.screen.active{display:block}.section-title{margin:0 0 6px;color:var(--navy);font-size:25px}.sub{color:var(--muted);margin-top:0}.grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.card{border:1px solid var(--line);border-radius:14px;padding:17px;background:#fff}.card h3{margin:4px 0 7px;color:var(--navy)}.icon{font-size:28px}.tag{display:inline-block;background:#eaf3f8;color:#245b7d;border-radius:99px;padding:4px 9px;font-size:12px;font-weight:bold}
+.story{background:#f7fafc;border-left:4px solid var(--teal);padding:16px 18px;border-radius:8px;margin:14px 0}.story h3{text-align:center;color:var(--navy);margin-top:0}.story h4{color:var(--teal);margin:14px 0 4px}
+.structure{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin:15px 0}.structure div{background:#f0f6fa;border-radius:12px;padding:13px;border-top:4px solid var(--blue)}.structure div:nth-child(2){border-color:#d58a39}.structure div:nth-child(3){border-color:#32936c}.structure div:nth-child(4){border-color:#8764a8}
+.callout{background:#fff8e8;border:1px solid #f0dfb7;border-radius:12px;padding:14px}
+.scenario-image{height:155px;border-radius:12px;display:grid;place-items:center;font-size:58px;background:linear-gradient(135deg,#e5f2f4,#f5f0df);margin-bottom:12px}
+.choice{display:block;width:100%;text-align:left;background:white;border:1px solid var(--line);padding:12px;border-radius:10px;margin:8px 0;color:var(--ink)}.choice.selected{border:2px solid var(--blue);background:#edf6fb}.choice.correct{border-color:#2e9560;background:#e9f7ef}.choice.wrong{border-color:#c75b5b;background:#fff0f0}
+.feedback{padding:12px;border-radius:10px;margin:12px 0;background:#eef6f9}.feedback.good{background:#eaf7ee;color:#205c3b}.feedback.bad{background:#fff0f0;color:#923b3b}
+.progress{height:9px;background:#e8eef4;border-radius:9px;overflow:hidden;margin:10px 0 18px}.progress span{display:block;height:100%;background:var(--teal);width:0;transition:.2s}
+.question{font-size:18px;font-weight:bold;margin:10px 0}.muted{color:var(--muted)}.row{display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}.result{text-align:center;background:#f1f7f9;border-radius:14px;padding:22px}.score{font-size:48px;font-weight:800;color:var(--teal);line-height:1.2}
+textarea{width:100%;min-height:110px;border:1px solid var(--line);border-radius:10px;padding:12px;resize:vertical}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
+.small{font-size:13px}.hide{display:none!important}
+@media(max-width:700px){.grid{grid-template-columns:1fr}.structure{grid-template-columns:repeat(2,1fr)}.hero{padding:25px 21px}.panel{padding:17px}.header-inner{align-items:flex-start}}
+@media print{header,nav,.no-print,footer{display:none!important}body{background:white}.panel{box-shadow:none;break-inside:avoid}}
+</style>
+</head>
+<body>
+<header><div class="header-inner"><div class="logo">MPI</div><div><h1>UNDERSTANDING NARRATIVE TEXT</h1><p>Bahasa Inggris • Kelas XII SMK • SMK Negeri 5 Kolaka Utara</p></div></div></header>
+<main>
+<section class="hero" id="welcome">
+ <div class="hero-content">
+  <div class="eyebrow">INTERACTIVE MULTIMEDIA LEARNING</div>
+  <h2>The Story of a<br>Friendly Future</h2>
+  <p>Belajar memahami teks naratif, mengenali struktur cerita, dan berpikir kritis tentang persahabatan yang tulus.</p>
+  <button class="btn gold start" onclick="showScreen('home')">MULAI BELAJAR →</button>
+ </div>
+</section>
+<nav class="no-print" id="navigation" style="display:none">
+ <button class="navbtn active" data-screen="home" onclick="showScreen('home')">⌂ Beranda</button>
+ <button class="navbtn" data-screen="material" onclick="showScreen('material')">📖 Materi</button>
+ <button class="navbtn" data-screen="simulation" onclick="showScreen('simulation')">🤝 Simulasi</button>
+ <button class="navbtn" data-screen="quiz" onclick="showScreen('quiz')">✏️ Kuis</button>
+ <button class="navbtn" data-screen="profile" onclick="showScreen('profile')">ⓘ Profil</button>
+</nav>
+
+<section class="screen panel" id="home">
+ <h2 class="section-title">Selamat Datang, Siswa!</h2><p class="sub">Welcome to our English learning experience.</p>
+ <div class="grid">
+  <div class="card"><div class="icon">📖</div><h3>Materi Pembelajaran</h3><p>Pelajari pengertian, tujuan, struktur, unsur kebahasaan, dan cerita naratif.</p><button class="btn" onclick="showScreen('material')">Buka Materi</button></div>
+  <div class="card"><div class="icon">🤝</div><h3>Simulasi Persahabatan</h3><p>Analisis tiga situasi: persahabatan tulus, karena materi, dan karena jabatan.</p><button class="btn" onclick="showScreen('simulation')">Mulai Simulasi</button></div>
+  <div class="card"><div class="icon">📝</div><h3>Kuis Interaktif</h3><p>Kerjakan 10 soal pilihan ganda dan lihat hasil secara otomatis.</p><button class="btn" onclick="showScreen('quiz')">Mulai Kuis</button></div>
+  <div class="card"><div class="icon">🏫</div><h3>Profil MPI</h3><p>Lihat identitas media dan petunjuk penggunaan.</p><button class="btn" onclick="showScreen('profile')">Lihat Profil</button></div>
+ </div>
+ <div class="callout" style="margin-top:16px"><b>Tujuan Pembelajaran</b><ol><li>Mengidentifikasi fungsi sosial teks naratif.</li><li>Menganalisis struktur dan unsur kebahasaan narrative text.</li><li>Menemukan informasi tersurat dan tersirat dalam cerita.</li><li>Mengevaluasi perilaku tokoh dan menyampaikan pesan moral.</li></ol></div>
+</section>
+
+<section class="screen panel" id="material">
+ <h2 class="section-title">Materi: Memahami Teks Naratif</h2><p class="sub">Read, understand, and explore the story.</p>
+ <h3>1. Definition</h3><p><b>Narrative text</b> is a text that tells a story or a sequence of events. It is usually written to entertain readers and often conveys a moral lesson.</p>
+ <h3>2. Social Function</h3><p>To entertain readers, engage their imagination, and communicate values or lessons through a story.</p>
+ <h3>3. Generic Structure</h3>
+ <div class="structure">
+  <div><b>Orientation</b><p class="small">Introduces the characters, setting, and time.</p></div>
+  <div><b>Complication</b><p class="small">Presents the problem or conflict.</p></div>
+  <div><b>Resolution</b><p class="small">Explains how the problem is solved.</p></div>
+  <div><b>Reorientation / Coda</b><p class="small">Closing comment or moral lesson (optional).</p></div>
+ </div>
+ <h3>4. Language Features</h3>
+ <ul><li><b>Simple Past Tense:</b> studied, became, helped.</li><li><b>Action Verbs:</b> walked, supported, prepared.</li><li><b>Time Connectives:</b> one day, then, finally.</li><li><b>Adjectives:</b> friendly, hardworking, sincere.</li><li><b>Direct Speech:</b> “I will always support you.”</li></ul>
+ <div class="story">
+  <h3>The Story of a Friendly Future</h3>
+  <p class="small muted" style="text-align:center">An original narrative for English learning</p>
+  <h4>Orientation</h4>
+  <p>In the year 2040, there were two students named Alex and Ben. They studied at a modern vocational school. Alex was a hardworking student, while Ben was friendly and helpful. They became good friends because they always supported each other.</p>
+  <h4>Complication</h4>
+  <p>One day, Alex became successful in a school technology competition. Many students wanted to be his friends because he received a valuable prize and became popular. Some students only wanted to use his money and reputation. Ben also faced a difficult situation when his family experienced financial problems.</p>
+  <p>Alex began to wonder whether his new friends really cared about him. He realized that some friendships were based on money and social status rather than honesty and kindness.</p>
+  <h4>Resolution</h4>
+  <p>Ben continued to support Alex even when he had nothing to offer. He helped Alex prepare for another competition and never asked for anything in return. Alex finally understood that true friendship was not about money, power, or position. It was about trust, respect, and helping one another.</p>
+  <h4>Moral Lesson</h4>
+  <p>True friendship comes from sincerity, honesty, loyalty, and mutual respect. We should choose friends who appreciate us for who we are, not for what we have.</p>
+ </div>
+ <h3>5. Vocabulary Corner</h3>
+ <div class="grid">
+  <div class="card"><b>Hardworking</b> = rajin bekerja/tekun</div><div class="card"><b>Reputation</b> = reputasi/nama baik</div>
+  <div class="card"><b>Sincere</b> = tulus</div><div class="card"><b>Support</b> = mendukung</div>
+  <div class="card"><b>Position</b> = jabatan/kedudukan</div><div class="card"><b>Mutual respect</b> = saling menghormati</div>
+ </div>
+ <div class="row no-print" style="margin-top:18px"><button class="btn ghost" onclick="showScreen('home')">← Menu Utama</button><button class="btn" onclick="showScreen('simulation')">Lanjut ke Simulasi →</button></div>
+</section>
+
+<section class="screen panel" id="simulation">
+ <h2 class="section-title">Simulasi: Understanding True Friendship</h2><p class="sub">Amati situasi, pilih tindakan yang tepat, lalu baca umpan balik.</p>
+ <div id="simContent"></div>
+ <div class="row no-print"><button class="btn ghost" onclick="showScreen('material')">← Materi</button><button class="btn" onclick="showScreen('quiz')">Lanjut ke Kuis →</button></div>
+ <div class="callout" style="margin-top:18px"><b>Refleksi kritis</b><p>Mengapa kita perlu menghindari persahabatan yang hanya didasarkan pada uang, barang, jabatan, atau kekuasaan? Tuliskan alasan dan contoh sikap yang sehat.</p>
+ <textarea id="reflection" placeholder="Tuliskan refleksi Anda di sini..."></textarea><div class="row no-print" style="margin-top:9px"><button class="btn ghost" onclick="saveReflection()">Simpan Refleksi</button><span id="reflectionStatus" class="small muted" aria-live="polite"></span></div></div>
+</section>
+
+<section class="screen panel" id="quiz">
+ <h2 class="section-title">Kuis Interaktif</h2><p class="sub">Pilih satu jawaban terbaik. Jawaban dapat diubah sebelum menekan tombol selesai.</p>
+ <div id="quizArea">
+  <div class="row"><b id="qCounter">Soal 1 dari 10</b><span class="tag" id="answeredCount">0/10 terjawab</span></div>
+  <div class="progress"><span id="progressBar"></span></div>
+  <div id="questionText" class="question"></div><div id="options"></div>
+  <div class="row no-print" style="margin-top:16px"><button class="btn ghost" id="prevBtn" onclick="moveQuestion(-1)">← Sebelumnya</button><button class="btn" id="nextBtn" onclick="moveQuestion(1)">Berikutnya →</button></div>
+  <button class="btn gold no-print" style="width:100%;margin-top:15px" onclick="submitQuiz()">SELESAI & LIHAT NILAI</button>
+ </div>
+ <div id="quizResult" class="result hide" aria-live="polite"></div>
+ <div class="row no-print" style="margin-top:16px"><button class="btn ghost" onclick="showScreen('simulation')">← Simulasi</button><button class="btn" onclick="resetQuiz()">Ulangi Kuis</button></div>
+</section>
+
+<section class="screen panel" id="profile">
+ <h2 class="section-title">Profil Media Pembelajaran</h2>
+ <div class="card"><h3>Identitas MPI</h3><p><b>Satuan Pendidikan:</b> SMK Negeri 5 Kolaka Utara</p><p><b>Mata Pelajaran:</b> Bahasa Inggris</p><p><b>Kelas:</b> XII SMK</p><p><b>Fase:</b> F (sesuaikan dengan ATP sekolah)</p><p><b>Materi:</b> Memahami Teks Naratif</p><p><b>Judul Cerita:</b> The Story of a Friendly Future</p><p><b>Jenis Media:</b> Multimedia Pembelajaran Interaktif berbasis HTML5</p></div>
+ <h3>Petunjuk Penggunaan</h3><ol><li>Klik tombol Mulai Belajar.</li><li>Pilih menu Materi untuk membaca penjelasan dan cerita.</li><li>Buka Simulasi untuk menganalisis tiga situasi persahabatan.</li><li>Isi refleksi berdasarkan pemikiran sendiri.</li><li>Kerjakan 10 soal kuis dan tekan Selesai untuk melihat nilai.</li></ol>
+ <div class="callout"><b>Informasi penggunaan offline</b><p class="small">File ini berjalan langsung di browser modern tanpa internet. Skor dan refleksi disimpan di browser/perangkat yang sama jika penyimpanan lokal diizinkan. Hasil tidak otomatis dikirim kepada guru.</p></div>
+ <button class="btn ghost no-print" onclick="showScreen('home')">← Kembali ke Beranda</button>
+</section>
+</main>
+<footer>MPI Bahasa Inggris • SMK Negeri 5 Kolaka Utara • Media pembelajaran offline</footer>
+<script>
+const screens=['home','material','simulation','quiz','profile'];
+function showScreen(id){
+ document.getElementById('welcome').style.display='none';
+ document.getElementById('navigation').style.display='flex';
+ screens.forEach(s=>document.getElementById(s).classList.toggle('active',s===id));
+ document.querySelectorAll('.navbtn').forEach(b=>b.classList.toggle('active',b.dataset.screen===id));
+ window.scrollTo({top:0,behavior:'smooth'});
+}
+const scenarios=[
+ {title:'Stimulus 1 — Persahabatan Tulus',emoji:'🤝',label:'Sincere Friendship',desc:'Dua siswa saling membantu belajar. Ketika salah satu mengalami kesulitan, temannya tetap hadir, mendengarkan, dan mendukung tanpa meminta imbalan.',question:'What makes this friendship sincere?',opts:['They help each other without expecting rewards.','They are friends because of expensive things.','They want to get a special position.'],correct:0,feedback:'Tepat! Persahabatan tulus dibangun melalui kepedulian, kejujuran, dukungan, dan saling menghargai.'},
+ {title:'Stimulus 2 — Persahabatan karena Materi',emoji:'💰',label:'Materialistic Friendship',desc:'Seorang siswa hanya mendekati temannya karena temannya memiliki telepon mahal, uang, dan sering membelikan makanan. Ia menjauh ketika tidak mendapat keuntungan.',question:'What is the healthiest response?',opts:['Give away all your belongings to keep the friend.','Recognize the pattern and set healthy boundaries.','Borrow money to impress the person.'],correct:1,feedback:'Tepat! Jangan mengukur persahabatan dari uang atau barang. Kenali perilaku yang memanfaatkan dan tetapkan batasan yang sehat.'},
+ {title:'Stimulus 3 — Persahabatan karena Jabatan',emoji:'🏅',label:'Status-Based Friendship',desc:'Seorang siswa hanya ingin dekat dengan ketua organisasi agar memperoleh perlakuan khusus, akses, atau pengaruh. Ia tidak menghargai teman lain.',question:'Which value should guide this relationship?',opts:['Respect people only when they have power.','Use the leader’s position for personal benefit.','Treat everyone fairly, regardless of position.'],correct:2,feedback:'Tepat! Persahabatan sehat tidak bergantung pada jabatan. Setiap orang layak dihargai secara adil.'}
+];
+let simIndex=0,simAnswers={};
+function renderSimulation(){
+ const s=scenarios[simIndex];
+ document.getElementById('simContent').innerHTML=`
+ <div class="card"><div class="scenario-image" role="img" aria-label="${s.label}">${s.emoji}</div>
+ <div class="row"><span class="tag">Situasi ${simIndex+1} dari 3</span><span class="tag">${s.label}</span></div>
+ <h3>${s.title}</h3><p>${s.desc}</p><hr style="border:0;border-top:1px solid var(--line)">
+ <b>${s.question}</b><div id="simOptions">${s.opts.map((o,i)=>`<button class="choice ${simAnswers[simIndex]===i?'selected':''}" onclick="chooseSimulation(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('')}</div>
+ <div id="simFeedback"></div>
+ <div class="row no-print" style="margin-top:13px"><button class="btn ghost" onclick="changeScenario(-1)" ${simIndex===0?'disabled':''}>← Sebelumnya</button><button class="btn" onclick="checkSimulation()">Periksa Jawaban</button><button class="btn ghost" onclick="changeScenario(1)" ${simIndex===2?'disabled':''}>Berikutnya →</button></div>
+ <p class="small muted">Kasus selesai: ${Object.keys(simAnswers).length}/3</p></div>`;
+}
+function chooseSimulation(i){simAnswers[simIndex]=i;renderSimulation()}
+function checkSimulation(){
+ const s=scenarios[simIndex],v=simAnswers[simIndex],el=document.getElementById('simFeedback');
+ if(v===undefined){el.innerHTML='<div class="feedback bad">Pilih jawaban terlebih dahulu.</div>';return}
+ el.innerHTML=`<div class="feedback ${v===s.correct?'good':'bad'}"><b>${v===s.correct?'Jawaban tepat!':'Coba pikirkan kembali.'}</b><br>${s.feedback}</div>`;
+}
+function changeScenario(d){simIndex=Math.max(0,Math.min(2,simIndex+d));renderSimulation()}
+function saveReflection(){const v=document.getElementById('reflection').value.trim();if(!v){document.getElementById('reflectionStatus').textContent='Tuliskan refleksi terlebih dahulu.';return}try{localStorage.setItem('mpiFriendshipReflection',v);document.getElementById('reflectionStatus').textContent='Refleksi tersimpan di perangkat ini.'}catch(e){document.getElementById('reflectionStatus').textContent='Penyimpanan browser tidak tersedia.'}}
+try{document.addEventListener('DOMContentLoaded',()=>{const v=localStorage.getItem('mpiFriendshipReflection');if(v)document.getElementById('reflection').value=v})}catch(e){}
+const questions=[
+ {q:'What is the social function of a narrative text?',o:['To describe a machine','To entertain readers and tell a story','To explain a procedure','To report an experiment'],a:1,why:'Narrative text tells a story and generally entertains readers.'},
+ {q:'Where did Alex and Ben study?',o:['At a modern vocational school','At a hospital','At a university abroad','At a village library'],a:0,why:'The orientation says they studied at a modern vocational school.'},
+ {q:'How is Ben described in the story?',o:['Selfish and greedy','Arrogant and rude','Friendly and helpful','Lazy and dishonest'],a:2,why:'Ben is described as friendly and helpful.'},
+ {q:'What happened to Alex after the technology competition?',o:['He stopped studying','He became successful and popular','He moved to another country','He lost his school bag'],a:1,why:'Alex received a valuable prize and became popular.'},
+ {q:'Why did some students want to be Alex’s friends?',o:['They wanted to help Ben','They were his family','They wanted to study English','They were attracted by his money and reputation'],a:3,why:'Some students approached Alex because of his money and reputation.'},
+ {q:'Which event represents the complication?',o:['Alex and Ben first met','They studied at a vocational school','Some students approached Alex for material benefits','Ben helped Alex prepare for a competition'],a:2,why:'The conflict develops when Alex questions whether the new friendships are sincere.'},
+ {q:'What did Ben do when Alex needed support?',o:['He ignored Alex','He continued to support and help Alex','He demanded a reward','He left the school'],a:1,why:'Ben supported Alex without expecting anything in return.'},
+ {q:'Which word is a simple past tense verb?',o:['Became','Helping','Supports','Will become'],a:0,why:'Became is the past form of become.'},
+ {q:'What is the main moral lesson of the story?',o:['Money is the basis of friendship','A position makes someone a better friend','Popularity is more important than honesty','True friendship is based on sincerity and respect'],a:3,why:'The story emphasizes sincerity, honesty, loyalty, and mutual respect.'},
+ {q:'What should you do if someone befriends you only because of your money or position?',o:['Give them everything they ask for','Evaluate the relationship and set healthy boundaries','Ignore every other friend','Try to buy their loyalty'],a:1,why:'Healthy relationships require respect and sincerity, not exploitation.'}
+];
+let current=0,answers=Array(10).fill(null),submitted=false;
+function renderQuestion(){
+ const q=questions[current];
+ document.getElementById('qCounter').textContent=`Soal ${current+1} dari 10`;
+ document.getElementById('answeredCount').textContent=`${answers.filter(x=>x!==null).length}/10 terjawab`;
+ document.getElementById('progressBar').style.width=((current+1)/10*100)+'%';
+ document.getElementById('questionText').textContent=`${current+1}. ${q.q}`;
+ document.getElementById('options').innerHTML=q.o.map((o,i)=>`<button class="choice ${answers[current]===i?'selected':''}" onclick="selectAnswer(${i})">${String.fromCharCode(65+i)}. ${o}</button>`).join('');
+ document.getElementById('prevBtn').disabled=current===0;
+ document.getElementById('nextBtn').disabled=current===9;
+}
+function selectAnswer(i){if(submitted)return;answers[current]=i;renderQuestion()}
+function moveQuestion(d){current=Math.max(0,Math.min(9,current+d));renderQuestion()}
+function submitQuiz(){
+ if(submitted)return;
+ const missing=answers.filter(x=>x===null).length;
+ if(missing){alert(`Masih ada ${missing} soal yang belum dijawab. Silakan lengkapi semua jawaban.`);return}
+ const correct=answers.reduce((n,a,i)=>n+(a===questions[i].a?1:0),0),score=correct*10;
+ submitted=true;
+ try{localStorage.setItem('mpiNarrativeLastResult',JSON.stringify({score,correct,total:10,date:new Date().toISOString()}))}catch(e){}
+ document.getElementById('quizArea').classList.add('hide');
+ const result=document.getElementById('quizResult');result.classList.remove('hide');
+ const status=score>=75?'TUNTAS':'PERLU PENGUATAN';
+ result.innerHTML=`<div class="tag">HASIL EVALUASI</div><div class="score">${score}/100</div><h2>${score>=75?'Excellent Work!':'Keep Practicing!'}</h2><p><b>${status}</b></p><p>Jawaban benar: ${correct} dari 10<br>Jawaban salah: ${10-correct} dari 10</p><div style="text-align:left;margin-top:18px"><h3>Pembahasan Jawaban</h3>${questions.map((q,i)=>`<div style="padding:10px;border-bottom:1px solid var(--line)"><b>${i+1}. ${q.q}</b><p class="small">${answers[i]===q.a?'✓ Benar.':'✗ Belum tepat.'} Jawaban benar: <b>${String.fromCharCode(65+q.a)}. ${q.o[q.a]}</b><br><span class="muted">${q.why}</span></p></div>`).join('')}</div><p class="small muted">Hasil tersimpan secara lokal pada browser ini jika penyimpanan diizinkan.</p><button class="btn no-print" onclick="window.print()">Cetak Hasil</button>`;
+}
+function resetQuiz(){current=0;answers=Array(10).fill(null);submitted=false;document.getElementById('quizArea').classList.remove('hide');document.getElementById('quizResult').classList.add('hide');renderQuestion()}
+renderSimulation();renderQuestion();
+</script>
+</body>
+</html>
